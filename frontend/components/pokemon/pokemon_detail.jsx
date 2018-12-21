@@ -11,7 +11,7 @@ class PokemonDetail extends React.Component {
     this.props.requestPokemon(parseInt(this.props.match.params.pokemonId));
   }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps) {
     if (this.props.pokemon && this.props.pokemon.id !== parseInt(nextProps.match.params.pokemonId) ) {
       this.props.requestPokemon(parseInt(nextProps.match.params.pokemonId));
     }
@@ -21,16 +21,16 @@ class PokemonDetail extends React.Component {
     if(!this.props.pokemon || !this.props.pokemon.poke_type) { return null; }
 
     return (
-      <div>
-        <img src={this.props.pokemon.image_url} />
+      <div className="pokemon-detail-container">
+        <img className="big-pokemon-img" src={this.props.pokemon.image_url} />
         <h3>{this.props.pokemon.name}</h3>
         <p>Type: {this.props.pokemon.poke_type}</p>
         <p>Attack: {this.props.pokemon.attack}</p>
         <p>Defense: {this.props.pokemon.defense}</p>
         <p>Moves: {this.props.pokemon.moves.join(', ')}</p>
 
-        <div>
-          <div>
+        <div className="items-container">
+          <div className="items-div">
             {
               this.props.pokemon.itemIds.map((item_id,idx) => {
                 return (

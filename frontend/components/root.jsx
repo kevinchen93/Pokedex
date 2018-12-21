@@ -9,14 +9,15 @@ const Root = ({ store }) => {
   return (
     <Provider store={store}>
       <HashRouter >
-        <div className="page-container">
+        <div className="main-content-container">
           <Route path="/" component={PokemonIndexContainer} />
-          <div className="poke-display">
-            <Switch>
-              <Route path="/pokemon/:pokemonId" component={PokemonDetailContainer} />
-              <Route path="/" render={() => <p>Select a pokemon!</p>} />
-            </Switch>
-          </div>
+
+        <div className="pokemon-display-container">
+          <Switch>
+            <Route path="/pokemon/:pokemonId" component ={PokemonDetailContainer} />
+            <Route path="/" render={() => <p>Select a Pokemon!</p>} />
+          </Switch>
+        </div>
         </div>
       </HashRouter>
     </Provider>

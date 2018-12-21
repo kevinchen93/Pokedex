@@ -1,0 +1,27 @@
+.items-div {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.items-div a {
+  padding: 7px;
+  border-radius: 5px;
+  box-shadow: 0 2px 18px -1px rgba(0,0,0,0.15);
+}
+
+.items-div a:focus {
+  background-color: red;
+}
+
+.item-img {
+  height: 50px;
+}
+
+.items-container {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 30px -1px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  padding: 27px;
+}
