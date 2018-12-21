@@ -1,7 +1,6 @@
 .items-div {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 20px;
 }
 
 .items-div a {
@@ -24,4 +23,8 @@
   box-shadow: 0 1px 30px -1px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
   padding: 27px;
+}
+
+.item-detail-container {
+  margin-top: 20px;
 }

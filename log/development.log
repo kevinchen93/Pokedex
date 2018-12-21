@@ -3538,3 +3538,85 @@ Completed 200 OK in 82ms (Views: 26.5ms | ActiveRecord: 12.2ms)
 Completed 200 OK in 648ms (Views: 646.4ms | ActiveRecord: 1.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-12-21 03:50:10 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.9ms)
+Completed 200 OK in 47ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2018-12-21 03:50:11 -0500
+Processing by Api::PokemonController#index as JSON
+Started GET "/api/pokemon/4" for 127.0.0.1 at 2018-12-21 03:50:11 -0500
+  Rendering api/pokemon/index.json.jbuilder
+Processing by Api::PokemonController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mPokemon Load (5.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  [1m[36mPokemon Load (7.7ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mItem Load (102.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."pokemon_id" = 4[0m
+  Rendering api/pokemon/show.json.jbuilder
+  Rendered api/pokemon/show.json.jbuilder (8.6ms)
+Completed 200 OK in 185ms (Views: 28.6ms | ActiveRecord: 110.4ms)
+
+
+  Rendered api/pokemon/index.json.jbuilder (539.5ms)
+Completed 200 OK in 551ms (Views: 545.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-21 03:50:42 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.5ms)
+Completed 200 OK in 58ms (Views: 54.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2018-12-21 03:50:42 -0500
+Processing by Api::PokemonController#index as JSON
+  Rendering api/pokemon/index.json.jbuilder
+Started GET "/api/pokemon/4" for 127.0.0.1 at 2018-12-21 03:50:42 -0500
+Processing by Api::PokemonController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mPokemon Load (19.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  [1m[36mPokemon Load (13.3ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mItem Load (27.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."pokemon_id" = 4[0m
+  Rendering api/pokemon/show.json.jbuilder
+  Rendered api/pokemon/show.json.jbuilder (5.0ms)
+Completed 200 OK in 99ms (Views: 18.1ms | ActiveRecord: 40.3ms)
+
+
+  Rendered api/pokemon/index.json.jbuilder (614.5ms)
+Completed 200 OK in 631ms (Views: 611.4ms | ActiveRecord: 19.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-21 03:52:42 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.4ms)
+Completed 200 OK in 220ms (Views: 216.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2018-12-21 03:52:43 -0500
+Processing by Api::PokemonController#index as JSON
+  Rendering api/pokemon/index.json.jbuilder
+Started GET "/api/pokemon/4" for 127.0.0.1 at 2018-12-21 03:52:43 -0500
+Processing by Api::PokemonController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mPokemon Load (0.8ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPokemon Load (7.6ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  [1m[36mItem Load (4.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."pokemon_id" = 4[0m
+  Rendering api/pokemon/show.json.jbuilder
+  Rendered api/pokemon/show.json.jbuilder (7.7ms)
+Completed 200 OK in 43ms (Views: 23.0ms | ActiveRecord: 5.6ms)
+
+
+  Rendered api/pokemon/index.json.jbuilder (637.5ms)
+Completed 200 OK in 650ms (Views: 642.5ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-21 03:52:56 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.7ms)
+Completed 200 OK in 96ms (Views: 91.5ms | ActiveRecord: 0.0ms)
+
+
