@@ -1062,3 +1062,393 @@ Completed 200 OK in 3321ms (Views: 3312.5ms | ActiveRecord: 0.0ms)
 Completed 200 OK in 232ms (Views: 227.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:06:48 -0500
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.4ms)
+Completed 200 OK in 2557ms (Views: 2553.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2018-12-20 19:06:52 -0500
+Processing by Api::PokemonController#index as JSON
+  Rendering api/pokemon/index.json.jbuilder
+  [1m[36mPokemon Load (5.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered api/pokemon/index.json.jbuilder (502.8ms)
+Completed 200 OK in 522ms (Views: 502.4ms | ActiveRecord: 18.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:32:12 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 650ms (Views: 645.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:32:32 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.4ms)
+Completed 200 OK in 699ms (Views: 696.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:32:51 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.7ms)
+Completed 200 OK in 703ms (Views: 697.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2018-12-20 19:32:52 -0500
+Processing by Api::PokemonController#index as JSON
+  Rendering api/pokemon/index.json.jbuilder
+Started GET "/api/pokemon/1" for 127.0.0.1 at 2018-12-20 19:32:52 -0500
+Processing by Api::PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (4.6ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  [1m[36mPokemon Load (3.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/pokemon/index.json.jbuilder (589.4ms)
+Completed 200 OK in 605ms (Views: 600.3ms | ActiveRecord: 4.6ms)
+
+
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."pokemon_id" = 1[0m
+  Rendering api/pokemon/show.json.jbuilder
+  Rendered api/pokemon/show.json.jbuilder (8.1ms)
+Completed 200 OK in 666ms (Views: 21.9ms | ActiveRecord: 90.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:35:57 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.6ms)
+Completed 200 OK in 57ms (Views: 53.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2018-12-20 19:35:58 -0500
+Started GET "/api/pokemon/1" for 127.0.0.1 at 2018-12-20 19:35:58 -0500
+Processing by Api::PokemonController#index as JSON
+Processing by Api::PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+  Rendering api/pokemon/index.json.jbuilder
+  [1m[36mPokemon Load (5.8ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (11.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  [1m[36mItem Load (13.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."pokemon_id" = 1[0m
+  Rendering api/pokemon/show.json.jbuilder
+  Rendered api/pokemon/show.json.jbuilder (8.6ms)
+Completed 200 OK in 67ms (Views: 29.4ms | ActiveRecord: 19.6ms)
+
+
+  Rendered api/pokemon/index.json.jbuilder (711.3ms)
+Completed 200 OK in 729ms (Views: 717.1ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/api/pokemon/3" for 127.0.0.1 at 2018-12-20 19:36:04 -0500
+Processing by Api::PokemonController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (2.2ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mItem Load (2.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."pokemon_id" = 3[0m
+  Rendering api/pokemon/show.json.jbuilder
+  Rendered api/pokemon/show.json.jbuilder (6.2ms)
+Completed 200 OK in 38ms (Views: 20.7ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/api/pokemon/4" for 127.0.0.1 at 2018-12-20 19:36:05 -0500
+Processing by Api::PokemonController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mPokemon Load (4.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."pokemon_id" = 4[0m
+  Rendering api/pokemon/show.json.jbuilder
+  Rendered api/pokemon/show.json.jbuilder (3.6ms)
+Completed 200 OK in 26ms (Views: 14.0ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:37:12 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.8ms)
+Completed 200 OK in 732ms (Views: 727.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2018-12-20 19:37:13 -0500
+Processing by Api::PokemonController#index as JSON
+Started GET "/api/pokemon/NaN" for 127.0.0.1 at 2018-12-20 19:37:13 -0500
+Processing by Api::PokemonController#show as JSON
+  Parameters: {"id"=>"NaN"}
+  Rendering api/pokemon/index.json.jbuilder
+  [1m[36mPokemon Load (22.9ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 27ms (ActiveRecord: 22.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pokemon with 'id'=NaN):
+  
+app/controllers/api/pokemon_controller.rb:11:in `show'
+  [1m[36mPokemon Load (122.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered api/pokemon/index.json.jbuilder (544.9ms)
+Completed 200 OK in 568ms (Views: 445.1ms | ActiveRecord: 122.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:39:11 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.7ms)
+Completed 200 OK in 623ms (Views: 620.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:40:01 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.6ms)
+Completed 200 OK in 590ms (Views: 587.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2018-12-20 19:40:02 -0500
+Processing by Api::PokemonController#index as JSON
+  Rendering api/pokemon/index.json.jbuilder
+  [1m[36mPokemon Load (28.8ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered api/pokemon/index.json.jbuilder (526.4ms)
+Completed 200 OK in 545ms (Views: 515.8ms | ActiveRecord: 28.8ms)
+
+
+Started GET "/api/pokemon/1" for 127.0.0.1 at 2018-12-20 19:40:05 -0500
+Processing by Api::PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."pokemon_id" = 1[0m
+  Rendering api/pokemon/show.json.jbuilder
+  Rendered api/pokemon/show.json.jbuilder (3.7ms)
+Completed 200 OK in 19ms (Views: 13.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:40:47 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 650ms (Views: 646.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pokemon/1" for 127.0.0.1 at 2018-12-20 19:40:48 -0500
+Processing by Api::PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Started GET "/api/pokemon" for 127.0.0.1 at 2018-12-20 19:40:48 -0500
+Processing by Api::PokemonController#index as JSON
+  Rendering api/pokemon/index.json.jbuilder
+  [1m[36mPokemon Load (33.1ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (6.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."pokemon_id" = 1[0m
+  Rendering api/pokemon/show.json.jbuilder
+  Rendered api/pokemon/show.json.jbuilder (8.7ms)
+Completed 200 OK in 83ms (Views: 22.2ms | ActiveRecord: 39.1ms)
+
+
+  [1m[36mPokemon Load (78.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered api/pokemon/index.json.jbuilder (562.9ms)
+Completed 200 OK in 599ms (Views: 520.0ms | ActiveRecord: 78.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:40:52 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pokemon/1" for 127.0.0.1 at 2018-12-20 19:40:53 -0500
+Processing by Api::PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (1.2ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/api/pokemon" for 127.0.0.1 at 2018-12-20 19:40:53 -0500
+  [1m[36mItem Load (14.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."pokemon_id" = 1[0m
+Processing by Api::PokemonController#index as JSON
+  Rendering api/pokemon/show.json.jbuilder
+  Rendering api/pokemon/index.json.jbuilder
+  Rendered api/pokemon/show.json.jbuilder (11.7ms)
+Completed 200 OK in 81ms (Views: 49.3ms | ActiveRecord: 16.2ms)
+
+
+  [1m[36mPokemon Load (24.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered api/pokemon/index.json.jbuilder (674.9ms)
+Completed 200 OK in 719ms (Views: 692.5ms | ActiveRecord: 24.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:41:02 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.6ms)
+Completed 200 OK in 45ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2018-12-20 19:41:03 -0500
+Processing by Api::PokemonController#index as JSON
+  Rendering api/pokemon/index.json.jbuilder
+  [1m[36mPokemon Load (1.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered api/pokemon/index.json.jbuilder (613.3ms)
+Completed 200 OK in 630ms (Views: 628.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/pokemon/1" for 127.0.0.1 at 2018-12-20 19:41:29 -0500
+Processing by Api::PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."pokemon_id" = 1[0m
+  Rendering api/pokemon/show.json.jbuilder
+  Rendered api/pokemon/show.json.jbuilder (6.3ms)
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:41:53 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.5ms)
+Completed 200 OK in 95ms (Views: 90.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pokemon/1" for 127.0.0.1 at 2018-12-20 19:41:54 -0500
+Processing by Api::PokemonController#show as JSON
+Started GET "/api/pokemon" for 127.0.0.1 at 2018-12-20 19:41:54 -0500
+  Parameters: {"id"=>"1"}
+Processing by Api::PokemonController#index as JSON
+  Rendering api/pokemon/index.json.jbuilder
+  [1m[36mPokemon Load (1.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPokemon Load (4.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  [1m[36mItem Load (9.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."pokemon_id" = 1[0m
+  Rendering api/pokemon/show.json.jbuilder
+  Rendered api/pokemon/show.json.jbuilder (11.5ms)
+Completed 200 OK in 78ms (Views: 41.9ms | ActiveRecord: 10.6ms)
+
+
+  Rendered api/pokemon/index.json.jbuilder (652.9ms)
+Completed 200 OK in 667ms (Views: 661.5ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:41:58 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.5ms)
+Completed 200 OK in 738ms (Views: 736.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pokemon/1" for 127.0.0.1 at 2018-12-20 19:41:59 -0500
+Started GET "/api/pokemon" for 127.0.0.1 at 2018-12-20 19:41:59 -0500
+Processing by Api::PokemonController#show as JSON
+Processing by Api::PokemonController#index as JSON
+  Parameters: {"id"=>"1"}
+  Rendering api/pokemon/index.json.jbuilder
+  [1m[36mPokemon Load (2.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."pokemon_id" = 1[0m
+  Rendering api/pokemon/show.json.jbuilder
+  Rendered api/pokemon/show.json.jbuilder (13.6ms)
+Completed 200 OK in 51ms (Views: 29.7ms | ActiveRecord: 3.1ms)
+
+
+  [1m[36mPokemon Load (73.6ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered api/pokemon/index.json.jbuilder (616.7ms)
+Completed 200 OK in 634ms (Views: 560.4ms | ActiveRecord: 73.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:43:18 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.4ms)
+Completed 200 OK in 664ms (Views: 662.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pokemon/1" for 127.0.0.1 at 2018-12-20 19:43:20 -0500
+Started GET "/api/pokemon" for 127.0.0.1 at 2018-12-20 19:43:20 -0500
+Processing by Api::PokemonController#show as JSON
+Processing by Api::PokemonController#index as JSON
+  Parameters: {"id"=>"1"}
+  Rendering api/pokemon/index.json.jbuilder
+  [1m[36mPokemon Load (1.2ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."pokemon_id" = 1[0m
+  Rendering api/pokemon/show.json.jbuilder
+  Rendered api/pokemon/show.json.jbuilder (5.7ms)
+Completed 200 OK in 37ms (Views: 18.9ms | ActiveRecord: 2.5ms)
+
+
+  [1m[36mPokemon Load (49.1ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered api/pokemon/index.json.jbuilder (577.3ms)
+Completed 200 OK in 597ms (Views: 547.7ms | ActiveRecord: 49.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:43:58 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.5ms)
+Completed 200 OK in 729ms (Views: 724.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:44:07 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.6ms)
+Completed 200 OK in 761ms (Views: 754.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pokemon/1" for 127.0.0.1 at 2018-12-20 19:44:08 -0500
+Processing by Api::PokemonController#show as JSON
+Started GET "/api/pokemon" for 127.0.0.1 at 2018-12-20 19:44:08 -0500
+  Parameters: {"id"=>"1"}
+Processing by Api::PokemonController#index as JSON
+  Rendering api/pokemon/index.json.jbuilder
+  [1m[36mPokemon Load (4.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  [1m[36mPokemon Load (4.9ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (2.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."pokemon_id" = 1[0m
+  Rendering api/pokemon/show.json.jbuilder
+  Rendered api/pokemon/show.json.jbuilder (6.8ms)
+Completed 200 OK in 61ms (Views: 19.8ms | ActiveRecord: 7.2ms)
+
+
+  Rendered api/pokemon/index.json.jbuilder (668.1ms)
+Completed 200 OK in 682ms (Views: 677.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:44:13 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.5ms)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pokemon/1" for 127.0.0.1 at 2018-12-20 19:44:13 -0500
+Processing by Api::PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/api/pokemon" for 127.0.0.1 at 2018-12-20 19:44:13 -0500
+Processing by Api::PokemonController#index as JSON
+  Rendering api/pokemon/index.json.jbuilder
+  [1m[36mItem Load (29.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."pokemon_id" = 1[0m
+  Rendering api/pokemon/show.json.jbuilder
+  Rendered api/pokemon/show.json.jbuilder (5.0ms)
+Completed 200 OK in 53ms (Views: 17.4ms | ActiveRecord: 30.9ms)
+
+
+  [1m[36mPokemon Load (8.7ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered api/pokemon/index.json.jbuilder (541.0ms)
+Completed 200 OK in 556ms (Views: 546.7ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-20 19:44:25 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 50ms (Views: 47.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pokemon/1" for 127.0.0.1 at 2018-12-20 19:44:25 -0500
+Processing by Api::PokemonController#show as JSON
+  Parameters: {"id"=>"1"}
+Started GET "/api/pokemon" for 127.0.0.1 at 2018-12-20 19:44:25 -0500
+Processing by Api::PokemonController#index as JSON
+  [1m[36mPokemon Load (6.8ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/pokemon/index.json.jbuilder
+  [1m[36mItem Load (14.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."pokemon_id" = 1[0m
+  Rendering api/pokemon/show.json.jbuilder
+  [1m[36mPokemon Load (22.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  Rendered api/pokemon/show.json.jbuilder (5.9ms)
+Completed 200 OK in 67ms (Views: 41.5ms | ActiveRecord: 21.1ms)
+
+
+  Rendered api/pokemon/index.json.jbuilder (584.7ms)
+Completed 200 OK in 604ms (Views: 582.0ms | ActiveRecord: 22.0ms)
+
+

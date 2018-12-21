@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 class PokemonIndexItem extends React.Component {
   constructor(props) {
@@ -9,8 +9,10 @@ class PokemonIndexItem extends React.Component {
   render() {
     return (
       <li>
-        <p>{ this.props.poke.name}</p>
-        <img src={this.props.poke.image_url} />
+        <Link to={`/pokemon/${this.props.poke.id}`}>
+          <p>{ this.props.poke.name}</p>
+          <img src={this.props.poke.image_url} />
+        </Link>
       </li>
     )
   }
