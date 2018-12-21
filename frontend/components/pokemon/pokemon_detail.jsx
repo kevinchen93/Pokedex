@@ -1,4 +1,6 @@
 import React from 'react';
+import ItemDetailContainer from '../items/item_detail_container';
+import { Route, Link } from 'react-router-dom';
 
 class PokemonDetail extends React.Component {
   constructor(props) {
@@ -9,27 +11,40 @@ class PokemonDetail extends React.Component {
     this.props.requestPokemon(parseInt(this.props.match.params.pokemonId));
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.pokemon && this.props.pokemon.id !== parseInt(nextProps.match.params.pokemonId)) {
+  componentWillReceiveProps(nextProps){
+    if (this.props.pokemon && this.props.pokemon.id !== parseInt(nextProps.match.params.pokemonId) ) {
       this.props.requestPokemon(parseInt(nextProps.match.params.pokemonId));
     }
   }
 
-  render() {
-    if (!this.props.pokemon || !this.props.pokemon.poke_type) {
-      return null;
-    }
+  render () {
+    if(!this.props.pokemon || !this.props.pokemon.poke_type) { return null; }
 
     return (
       <div>
         <img src={this.props.pokemon.image_url} />
         <h3>{this.props.pokemon.name}</h3>
-        <p>{this.props.pokemon.poke_type}</p>
-        <p>{this.props.pokemon.attack}</p>
-        <p>{this.props.pokemon.defense}</p>
-        <p>{this.props.pokemon.moves.join(', ')}</p>
+        <p>Type: {this.props.pokemon.poke_type}</p>
+        <p>Attack: {this.props.pokemon.attack}</p>
+        <p>Defense: {this.props.pokemon.defense}</p>
+        <p>Moves: {this.props.pokemon.moves.join(', ')}</p>
+
+        <div>
+          <div>
+            {
+              this.props.pokemon.itemIds.map((item_id,idx) => {
+                return (
+                  <Link key={idx} to={`/pokemon/${this.props.pokemon.id}/item/${item_id}`}>
+                    <p>Item {item_id}</p>
+                  </Link>
+                );
+              })
+            }
+          </div>
+          <Route path="/pokemon/:pokemonId/item/:itemId" component={ItemDetailContainer} />
+        </div>
       </div>
-    )
+    );
   }
 }
 

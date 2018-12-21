@@ -6,15 +6,15 @@ class PokemonIndexItem extends React.Component {
     super(props);
   }
 
-  render() {
+  render () {
     return (
       <li>
         <Link to={`/pokemon/${this.props.poke.id}`}>
-          <p>{ this.props.poke.name}</p>
-          <img src={this.props.poke.image_url} />
+          <p>{this.props.poke.name}</p>
+          <img src={this.props.poke.image_url}/>
         </Link>
       </li>
-    )
+    );
   }
 }
 
